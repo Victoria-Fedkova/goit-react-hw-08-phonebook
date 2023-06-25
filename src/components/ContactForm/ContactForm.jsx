@@ -1,7 +1,7 @@
 import { Form, FormGroup, FormInput, AddBtn } from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/operations';
-import { selectContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const ContactForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const name = e.currentTarget.elements.name.value;
-    const phone = e.currentTarget.elements.number.value;
+    const number = e.currentTarget.elements.number.value;
 
     if (
       items?.find(contact => contact.name.toLowerCase() === name.toLowerCase())
@@ -20,7 +20,7 @@ const ContactForm = () => {
     }
     const newContact = {
       name: name,
-      phone: phone,
+      number: number,
     };
     dispatch(addContact(newContact));
     e.target.reset();

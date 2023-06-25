@@ -5,9 +5,9 @@ import {
   selectError,
   selectFilteredContacts,
   selectIsLoading,
-} from 'redux/selectors';
+} from 'redux/contacts/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 
 const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -33,8 +33,8 @@ const ContactList = () => {
           </tr>
         </thead>
         <tbody>
-          {visibleContacts.map(({ id, name, phone }) => (
-            <ContactListRow key={id} id={id} name={name} number={phone} />
+          {visibleContacts.map(({ id, name, number }) => (
+            <ContactListRow key={id} id={id} name={name} number={number} />
           ))}
         </tbody>
       </Table>

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Form, FormGroup, FormInput, AddBtn } from './Filter.styled';
 import { useDispatch } from 'react-redux';
-import { setFilter } from 'redux/filterSlice';
+import { setFilter } from 'redux/filter/filterSlice';
 
 const Filter = () => {
   const inputRef = useRef(null);

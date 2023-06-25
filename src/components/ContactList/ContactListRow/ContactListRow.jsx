@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { DelBtn, TableD, TableRow } from './ContactListRow.styled';
 import { ReactComponent as Logo } from './Delete-button.svg';
 import PropTypes from 'prop-types';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
 const ContactListRow = ({ id, name, number }) => {
   const dispatch = useDispatch();
