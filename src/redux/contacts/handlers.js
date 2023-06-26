@@ -1,4 +1,9 @@
-import { addContact, deleteContact, fetchContacts } from './operations';
+import {
+  addContact,
+  deleteContact,
+  editContact,
+  fetchContacts,
+} from './operations';
 
 const { isAnyOf } = require('@reduxjs/toolkit');
 
@@ -24,5 +29,10 @@ export const handleDelItem = (state, action) => {
   state.items.splice(index, 1);
 };
 
-const arrThunks = [addContact, deleteContact, fetchContacts];
+export const handleEditContact = (state, action) => {
+  const index = state.items.findIndex(item => item.id === action.payload.id);
+  state.items.splice(index, 1, { ...state.items[index], ...action.payload });
+};
+
+const arrThunks = [addContact, deleteContact, fetchContacts, editContact];
 export const createStatus = type => isAnyOf(...arrThunks.map(el => el[type]));

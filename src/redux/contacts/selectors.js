@@ -15,3 +15,4 @@ export const selectFilteredContacts = createSelector(
     );
   }
 );
+export const selectEditedContactId = state => state.contacts.editeContactdId;

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
+import img from './book.svg';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: rgba(179, 178, 176, 0.7);
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -12,6 +12,7 @@ export const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
   color: white;
+  background-color: rgba(179, 178, 176, 0.7);
 
   @media screen and (min-width: 576px) {
     max-width: 540px;
@@ -39,5 +40,37 @@ export const Heading = styled.h2`
     width: 100%;
     border: 1px solid #f5f5f5;
     margin-top: 1rem;
+  }
+`;
+
+export const HomeWrapper = styled.div`
+  /* display: flex;
+  align-items: center;
+  justify-content: space-around; */
+  text-align: start;
+  /* height: 100vh; */
+  margin-bottom: 1rem;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    & h2 {
+      font-size: 48px;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    background-image: url(${img});
+    background-size: 30%;
+    background-position-x: 90%;
+    background-position-y: 10%;
+
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    background-position-y: 30%;
+  }
+  @media screen and (min-width: 1200px) {
+    background-position-y: 50%;
   }
 `;

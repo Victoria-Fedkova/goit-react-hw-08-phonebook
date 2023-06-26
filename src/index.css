@@ -23,8 +23,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../assets/writing-pad-3202747_1920.jpg');
-  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url('../assets/mobile.jpg');
+  background-size: contain;
   background-attachment: fixed;
 }

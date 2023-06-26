@@ -22,3 +22,15 @@ export const DelBtn = styled.button`
     fill: #007bff;
   }
 `;
+
+export const Input = styled.input`
+  color: white;
+  background-color: transparent;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 3px;
+  &:disabled {
+    margin: 0;
+    border: none;
+  }
+`;
