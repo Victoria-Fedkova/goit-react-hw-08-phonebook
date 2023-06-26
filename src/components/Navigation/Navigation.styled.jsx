@@ -2,18 +2,17 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-  display: flex;
-  gap: 10px;
-
-  justify-content: space-between;
-  /* width: 100%; */
   color: white;
+  @media screen and (min-width: 576px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
 `;
 
 export const HomeNav = styled(NavLink)`
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   text-decoration: none;
   font-size: 1.5rem;
   line-height: 1.5;

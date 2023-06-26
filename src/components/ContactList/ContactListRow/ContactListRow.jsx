@@ -9,7 +9,7 @@ import { useMemo, useState } from 'react';
 import { selectEditedContactId } from 'redux/contacts/selectors';
 import { setEditedContactId } from 'redux/contacts/contactsSlice';
 
-const ContactListRow = contact => {
+const ContactListRow = ({ contact }) => {
   const [name, setName] = useState(contact.name);
   const [number, setNumber] = useState(contact.number);
 
@@ -37,24 +37,18 @@ const ContactListRow = contact => {
       <TableD>
         <Input
           type="text"
-          // sx={{ border: 'none', color: 'white' }}
           value={name}
           disabled={!isEdited}
-          // id="standard-basic"
-          // variant="standard"
-          // InputProps={{
-          //   disabled: !isEdited,
-          // }}
           onChange={event => setName(event.target.value)}
         />
-        {/* {name} */}
       </TableD>
       <TableD>
         {' '}
         <Input
           type="tel"
+          name="number"
+          pattern="\+?[0-9\s\-\(\)]+"
           disabled={!isEdited}
-          // id="standard-basic"
           variant="standard"
           value={number}
           InputProps={{
@@ -67,12 +61,13 @@ const ContactListRow = contact => {
       </TableD>
       <TableD>
         {isEdited ? (
-          <DelBtn type="submit" onClick={handleEdit}>
+          <DelBtn type="submit" onClick={handleEdit} title="save changes">
             <SaveIcon />
           </DelBtn>
         ) : (
           <DelBtn
             type="button"
+            title="edit contact"
             onClick={() => {
               dispatch(setEditedContactId(contact.id));
             }}
@@ -81,7 +76,7 @@ const ContactListRow = contact => {
           </DelBtn>
         )}
 
-        <DelBtn type="button" onClick={handleDelete}>
+        <DelBtn type="button" onClick={handleDelete} title="delete contact">
           <DeleteForeverIcon />
         </DelBtn>
       </TableD>
@@ -90,9 +85,11 @@ const ContactListRow = contact => {
 };
 
 ContactListRow.propeTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
 };
 
 export default ContactListRow;

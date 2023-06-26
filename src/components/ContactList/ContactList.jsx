@@ -33,8 +33,8 @@ const ContactList = () => {
           </tr>
         </thead>
         <tbody>
-          {visibleContacts.map(({ id, name, number }) => (
-            <ContactListRow key={id} id={id} name={name} number={number} />
+          {visibleContacts.map(contact => (
+            <ContactListRow key={contact.id} contact={contact} />
           ))}
         </tbody>
       </Table>

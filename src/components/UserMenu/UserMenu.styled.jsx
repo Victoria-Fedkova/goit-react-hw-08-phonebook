@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  & p {
+  @media screen and (min-width: 576px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

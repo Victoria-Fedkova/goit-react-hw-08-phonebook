@@ -44,11 +44,7 @@ export const Heading = styled.h2`
 `;
 
 export const HomeWrapper = styled.div`
-  /* display: flex;
-  align-items: center;
-  justify-content: space-around; */
   text-align: start;
-  /* height: 100vh; */
   margin-bottom: 1rem;
   width: 100%;
 
